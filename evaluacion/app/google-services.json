@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "193748026113",
+    "firebase_url": "https://comunidadconectada-2408c-default-rtdb.firebaseio.com",
+    "project_id": "comunidadconectada-2408c",
+    "storage_bucket": "comunidadconectada-2408c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193748026113:android:53fccbeee30fcdbc541100",
+        "android_client_info": {
+          "package_name": "com.yungsamy.comunidadconectada"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1Z3hVMEGxJ4MrwdLpRDnaSWqHEJkpKLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
