@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="primary_teal">#00897B</color>
-    <color name="primary_dark_navy">#1A237E</color>
+    <!-- Paleta personalizada Comunidad Conectada -->
+    <color name="palette_void">#190019</color>
+    <color name="palette_indigo">#2B124C</color>
+    <color name="palette_plum">#522B5B</color>
+    <color name="palette_mauve">#854F6C</color>
+    <color name="palette_rose">#DFB6B2</color>
+    <color name="palette_cream">#FBE4D8</color>
+
+    <!-- Asignación semántica vinculada a todos los layouts y clases Java -->
+    <color name="primary_dark_navy">#FBE4D8</color>
+    <color name="primary_teal">#522B5B</color>
+    <color name="bg_light">#190019</color>
+    <color name="card_white">#2B124C</color>
+    <color name="white">#2B124C</color>
+    <color name="text_primary">#FBE4D8</color>
+    <color name="text_secondary">#DFB6B2</color>
     <color name="alert_red">#D32F2F</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="bg_light">#F5F5F5</color>
-    <color name="card_white">#FFFFFF</color>
+    <color name="black">#190019</color>
 </resources>

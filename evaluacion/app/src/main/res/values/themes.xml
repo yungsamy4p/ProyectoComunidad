@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ComunidadConectada" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.ComunidadConectada" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/palette_plum</item>
+        <item name="colorPrimaryVariant">@color/palette_void</item>
+        <item name="colorOnPrimary">@color/palette_cream</item>
+        <item name="colorSecondary">@color/palette_mauve</item>
+        <item name="colorSecondaryVariant">@color/palette_rose</item>
+        <item name="colorOnSecondary">@color/palette_cream</item>
+        <item name="android:statusBarColor">@color/palette_void</item>
+        <item name="android:navigationBarColor">@color/palette_indigo</item>
+        <item name="android:windowBackground">@color/palette_void</item>
+        <item name="android:textColorPrimary">@color/palette_cream</item>
+        <item name="android:textColorSecondary">@color/palette_rose</item>
     </style>
-
-    <style name="Theme.ComunidadConectada" parent="Base.Theme.ComunidadConectada" />
 </resources>

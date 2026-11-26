@@ -3,85 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light"
+    android:background="@color/palette_void"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:padding="28dp">
+        android:padding="24dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Crear cuenta"
-            android:textColor="@color/primary_dark_navy"
+            android:textColor="@color/palette_cream"
             android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:layout_marginBottom="24dp"
             android:text="Regístrate como vecino de Comunidad Los Aromos"
-            android:textColor="@color/text_secondary" />
+            android:textColor="@color/palette_rose"
+            android:textSize="14sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre completo (ej. Profe Benja)">
+            android:hint="Nombre completo (ej. Samuel Giraldo)"
+            android:textColorHint="@color/palette_rose"
+            app:boxStrokeColor="@color/palette_mauve"
+            app:hintTextColor="@color/palette_rose">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNombreReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/palette_cream" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:hint="Número de vivienda (ej. 311A)"
-            app:helperText="Admite letras y números">
+            android:layout_marginTop="12dp"
+            android:hint="Número de vivienda (ej. B12)"
+            android:textColorHint="@color/palette_rose"
+            app:boxStrokeColor="@color/palette_mauve"
+            app:helperText="Admite letras y números"
+            app:helperTextTextColor="@color/palette_rose"
+            app:hintTextColor="@color/palette_rose">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etViviendaReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapCharacters" />
+                android:inputType="textCapCharacters"
+                android:textColor="@color/palette_cream" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:hint="Correo electrónico">
+            android:layout_marginTop="12dp"
+            android:hint="Correo electrónico"
+            android:textColorHint="@color/palette_rose"
+            app:boxStrokeColor="@color/palette_mauve"
+            app:hintTextColor="@color/palette_rose">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCorreoReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/palette_cream" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:hint="Contraseña (mínimo 6 caracteres)"
-            app:endIconMode="password_toggle">
+            android:textColorHint="@color/palette_rose"
+            app:boxStrokeColor="@color/palette_mauve"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/palette_rose"
+            app:hintTextColor="@color/palette_rose">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPasswordReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="@color/palette_cream" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ProgressBar
@@ -90,27 +111,28 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
+            android:indeterminateTint="@color/palette_rose"
             android:visibility="gone" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnRegistrarme"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/primary_teal"
-            android:text="Registrarme"
-            android:textSize="16sp"
-            app:cornerRadius="12dp" />
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/palette_plum"
+            android:text="REGISTRARME"
+            android:textColor="@color/palette_cream"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvVolverLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:padding="8dp"
             android:text="¿Ya tienes cuenta? Inicia sesión"
-            android:textColor="@color/primary_dark_navy"
+            android:textColor="@color/palette_rose"
             android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>

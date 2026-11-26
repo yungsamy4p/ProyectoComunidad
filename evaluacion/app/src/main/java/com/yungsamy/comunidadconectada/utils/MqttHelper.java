@@ -20,12 +20,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import javax.net.ssl.SSLSocketFactory;
 
 public class MqttHelper {
     private static final String TAG = "MqttHelper";
 
-    // Configuración EMQX Cloud Serverless (TLS 8883)
-    private static final String BROKER_URI = "ssl://p8a9198a.ala.us-east-1.emqxsl.com";
+    // Configuración EMQX Cloud Serverless
+    private static final String BROKER_URI = "wss://p8a9198a.ala.us-east-1.emqxsl.com:8084/mqtt";
     private static final String MQTT_USER = "yungsamy";
     private static final String MQTT_PASS = "evaluacion";
     public static final String TOPIC_ALERTAS = "comunidad/comunidad01/alertas";
@@ -48,7 +49,7 @@ public class MqttHelper {
             this.client = new MqttAsyncClient(BROKER_URI, clientId, new MemoryPersistence());
             configurarCallbacks();
         } catch (MqttException e) {
-            Log.e(TAG, "Error inicializando MqttAsyncClient: " + e.getMessage(), e);
+            Log.e(TAG, "Error inicializando MqttAsyncClient: " + e.toString(), e);
         }
     }
 
@@ -64,7 +65,7 @@ public class MqttHelper {
 
             @Override
             public void connectionLost(Throwable cause) {
-                Log.w(TAG, "Conexión MQTT perdida: " + (cause != null ? cause.getMessage() : "desconocida"));
+                Log.w(TAG, "Conexión MQTT perdida: " + (cause != null ? cause.toString() : "desconocida"));
                 notificarEstado(false);
             }
 
@@ -88,7 +89,7 @@ public class MqttHelper {
                         mainHandler.post(() -> listener.onNuevaAlertaRecibida(id, emisor, vivienda, fecha));
                     }
                 } catch (Exception e) {
-                    Log.e(TAG, "Error parseando payload MQTT: " + e.getMessage(), e);
+                    Log.e(TAG, "Error parseando payload MQTT: " + e.toString(), e);
                 }
             }
 
@@ -107,6 +108,8 @@ public class MqttHelper {
         options.setCleanSession(true);
         options.setConnectionTimeout(10);
         options.setKeepAliveInterval(30);
+        options.setSocketFactory(SSLSocketFactory.getDefault());
+        options.setHttpsHostnameVerificationEnabled(false);
 
         try {
             client.connect(options, null, new IMqttActionListener() {
@@ -118,12 +121,12 @@ public class MqttHelper {
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    Log.e(TAG, "Fallo conexión EMQX: " + (exception != null ? exception.getMessage() : "error"));
+                    Log.e(TAG, "Fallo conexión EMQX: " + (exception != null ? exception.toString() : "error"), exception);
                     notificarEstado(false);
                 }
             });
         } catch (Exception e) {
-            Log.e(TAG, "Excepción al conectar MQTT: " + e.getMessage(), e);
+            Log.e(TAG, "Excepción al conectar MQTT: " + e.toString(), e);
             notificarEstado(false);
         }
     }
@@ -134,7 +137,7 @@ public class MqttHelper {
                 client.subscribe(TOPIC_ALERTAS, 1);
             }
         } catch (Exception e) {
-            Log.e(TAG, "Error suscribiendo a alertas: " + e.getMessage(), e);
+            Log.e(TAG, "Error suscribiendo a alertas: " + e.toString(), e);
         }
     }
 
@@ -184,7 +187,7 @@ public class MqttHelper {
                 client.close();
             }
         } catch (Exception e) {
-            Log.e(TAG, "Error desconectando MQTT: " + e.getMessage());
+            Log.e(TAG, "Error desconectando MQTT: " + e.toString());
         }
     }
 

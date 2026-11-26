@@ -89,7 +89,7 @@ public class AlertasFragment extends Fragment {
                     @Override
                     public void onSuccess(IMqttToken asyncActionToken) {
                         ultimoEnvioTimestamp = System.currentTimeMillis();
-                        // Guardar registro histórico en Firebase Realtime Database
+                        // Guardar registro histórico en Firebase
                         Alerta nueva = new Alerta(
                                 alertaId, "comunidad01",
                                 MainActivity.usuarioActual.uid,
